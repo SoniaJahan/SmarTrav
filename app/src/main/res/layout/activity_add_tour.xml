@@ -4,89 +4,145 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTourActivity"
-    android:orientation="vertical">
+    tools:context=".Activity.AddTourActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:orientation="vertical">
+
+
         <TextView
+            android:id="@+id/addnewtripTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/add_new_trip"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Tour Name"/>
-        <EditText
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tour Name:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tour Name" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tour Name"
-            android:id="@+id/NameTV"/>
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tour Place:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tPlaceET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tour Name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Start Date:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/openStartDatePickerBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Start Date" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="End Date:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/openEndTimePickerBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select End Date" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tour Description:"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tDescriptionET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/saveTripBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="20dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="SAVE"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter Tour Name"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tour Name"
-            android:id="@+id/tourNameTV"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter Tour Name"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tour Name"
-            android:id="@+id/tourNameTV"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter Tour Name"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tour Name"
-            android:id="@+id/tourNameTV"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter Tour Name"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tour Name"
-            android:id="@+id/tourNameTV"/>
-    </LinearLayout>
-
-
 
 </RelativeLayout>

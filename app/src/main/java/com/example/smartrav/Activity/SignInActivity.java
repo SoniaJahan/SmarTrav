@@ -1,10 +1,8 @@
-package com.example.smartrav;
+package com.example.smartrav.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.smartrav.databinding.ActivitySignUpBinding;
+import com.example.smartrav.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -42,13 +40,14 @@ public class SignInActivity extends AppCompatActivity {
         init();
 
         if (firebaseAuth.getCurrentUser()!=null){
-            startActivity(new Intent(SignInActivity.this,MainActivity.class));
+            startActivity(new Intent(SignInActivity.this, MainActivity.class));
             finish();
         }
+
         signUpTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignInActivity.this,SignUpActivity.class));
+                startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
             }
         });
 

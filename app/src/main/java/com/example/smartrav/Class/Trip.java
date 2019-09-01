@@ -1,4 +1,4 @@
-package com.example.smartrav;
+package com.example.smartrav.Class;
 
 public class Trip {
 

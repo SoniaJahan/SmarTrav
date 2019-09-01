@@ -1,8 +1,7 @@
-package com.example.smartrav;
+package com.example.smartrav.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.smartrav.databinding.ActivitySignUpBinding;
+import com.example.smartrav.R;
+import com.example.smartrav.Class.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -40,12 +40,14 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        signUpBtn = findViewById(R.id.signUpBtn);
+
         init();
 
         signInTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignUpActivity.this,SignInActivity.class));
+                startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
             }
         });
 
@@ -115,7 +117,6 @@ public class SignUpActivity extends AppCompatActivity {
         nameET = findViewById(R.id.nameET);
         emailET = findViewById(R.id.emailET);
         passwordET = findViewById(R.id.passwordET);
-        signUpBtn = findViewById(R.id.signUpBtn);
         signInTV = findViewById(R.id.signInTV);
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
