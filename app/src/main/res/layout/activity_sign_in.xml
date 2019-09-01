@@ -8,58 +8,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity">
+    tools:context=".Activity.SignInActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="30dp"
-        android:layout_centerInParent="true">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/emailET"
-            android:hint="Email"
-            android:inputType="textEmailAddress"/>
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
 
         <EditText
+            android:id="@+id/emailET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
             android:id="@+id/passwordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Password"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
 
         <Button
+            android:id="@+id/signInBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/signInBtn"
-            android:text="Sign In"
             android:layout_gravity="right"
-            android:textAllCaps="false"
             android:background="@color/red"
-            android:textColor="@color/white"/>
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Don't have an account?"
-                android:textStyle="bold"
-                android:padding="3dp"/>
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/signup"
+                android:padding="3dp"
+                android:text="Don't have an account?"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/signUpTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:text="@string/signup"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
         </LinearLayout>
 
 
