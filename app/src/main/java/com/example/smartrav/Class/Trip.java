@@ -2,21 +2,12 @@ package com.example.smartrav.Class;
 
 public class Trip {
 
-    private String tourId;
     private String tourName;
     private String tourPlace;
     private String startDate;
     private String endDate;
     private String description;
-
-    public Trip(String tourId, String tourName, String tourPlace, String startDate, String endDate, String description) {
-        this.tourId = tourId;
-        this.tourName = tourName;
-        this.tourPlace = tourPlace;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.description = description;
-    }
+    private String tourId;
 
     public Trip(String tourName, String tourPlace, String startDate, String endDate, String description) {
         this.tourName = tourName;
@@ -26,21 +17,37 @@ public class Trip {
         this.description = description;
     }
 
-    public String getTourName() { return tourName;
+    public Trip(String tourName, String tourPlace, String startDate, String endDate, String description, String tourId) {
+        this.tourName = tourName;
+        this.tourPlace = tourPlace;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.description = description;
+        this.tourId = tourId;
     }
 
-    public String getTourPlace() { return tourPlace;
+    public String getTourName() {
+        return tourName;
     }
 
-    public String getStartDate() { return startDate;
+    public String getTourPlace() {
+        return tourPlace;
     }
 
-    public String getEndDate() { return endDate;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public String getDescription() { return description;
+    public String getEndDate() {
+        return endDate;
     }
-    public String getTourId() { return tourId;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getTourId() {
+        return tourId;
     }
 
     public void setTourId(String tourId) {

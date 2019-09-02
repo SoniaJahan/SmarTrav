@@ -5,13 +5,223 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.TripsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Trip"
-        android:textStyle="italic"
-        android:textSize="30dp"
-        android:layout_margin="4dp"/>
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/tourCover1IV"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/sylhet" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sylhet Tour"
+                    android:layout_margin="5dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:id="@+id/tourName1TV"
+                    android:background="@color/LightGreen"
+                    android:textSize="20dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6"
+                    android:layout_below="@id/tourCover1IV">
+                    <Button
+                        android:id="@+id/details1BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        android:layout_weight="2" />
+                    <Button
+                        android:id="@+id/moments1BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Moments"
+                        android:layout_weight="2"
+                        />
+                    <Button
+                        android:id="@+id/delete1BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delete"
+                        android:textColor="#9E1313"
+                        android:layout_weight="2"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/tourCover2IV"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/coxsbazar" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cox's Bazar"
+                    android:layout_margin="5dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:id="@+id/tourName2TV"
+                    android:background="@color/LightGreen"
+                    android:textSize="20dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6"
+                    android:layout_below="@id/tourCover2IV">
+                    <Button
+                        android:id="@+id/details2BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        android:layout_weight="2"
+                        android:onClick="details"/>
+                    <Button
+                        android:id="@+id/moments2BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Moments"
+                        android:layout_weight="2"
+                        />
+                    <Button
+                        android:id="@+id/delete2BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delete"
+                        android:textColor="#9E1313"
+                        android:layout_weight="2"
+                        android:onClick="Delete"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/tourCover4IV"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/sajek" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sajek Tour"
+                    android:layout_margin="5dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:id="@+id/tourName4TV"
+                    android:background="@color/LightGreen"
+                    android:textSize="20dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6"
+                    android:layout_below="@id/tourCover4IV">
+                    <Button
+                        android:id="@+id/details4BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        android:layout_weight="2" />
+                    <Button
+                        android:id="@+id/moments4BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Moments"
+                        android:layout_weight="2"
+                        />
+                    <Button
+                        android:id="@+id/delete4BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delete"
+                        android:textColor="#9E1313"
+                        android:layout_weight="2"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:id="@+id/tourCoverIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/sundarban" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sundarban Tour"
+                    android:layout_margin="5dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:id="@+id/tourNameTV"
+                    android:background="@color/LightGreen"
+                    android:textSize="20dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6"
+                    android:layout_below="@id/tourCoverIV">
+                    <Button
+                        android:id="@+id/detailsBTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        android:layout_weight="2" />
+                    <Button
+                        android:id="@+id/momentsBTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Moments"
+                        android:layout_weight="2"
+                        />
+                    <Button
+                        android:id="@+id/deleteBTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delete"
+                        android:textColor="#9E1313"
+                        android:layout_weight="2"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

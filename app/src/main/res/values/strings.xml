@@ -24,4 +24,5 @@
     <string name="signup"><u>Sign Up</u></string>
     <string name="sign_in_here"><u>Sign In here</u></string>
     <string name="add_new_trip"><u>ADD NEW TRIP</u></string>
+    <string name="click_here_for_details"><u>Click here for Details</u></string>
 </resources>

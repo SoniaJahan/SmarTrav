@@ -1,28 +1,36 @@
 package com.example.smartrav.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.smartrav.Activity.MainActivity;
+import com.example.smartrav.Activity.ViewTourActivity;
 import com.example.smartrav.Class.Trip;
 import com.example.smartrav.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TripAdapter extends RecyclerView.Adapter<TripAdapter.ViewHolder> {
 
-    private List<Trip> tripList;
+    private ArrayList<Trip> tripList;
     private Context context;
 
-    public TripAdapter(List<Trip> tripList, Context context) {
+    public TripAdapter(ArrayList<Trip> tripList, Context context) {
         this.tripList = tripList;
         this.context = context;
+    }
+
+    public TripAdapter() {
     }
 
     @NonNull
@@ -37,14 +45,25 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull TripAdapter.ViewHolder holder, int position) {
 
-        Trip currentTrip = tripList.get(position);
+        final Trip trip = tripList.get(position);
 
-        holder.tNameET.setText(currentTrip.getTourName());
-        holder.tPlaceET.setText(currentTrip.getTourPlace());
-        holder.openStartDatePickerBtn.setText(currentTrip.getStartDate());
-        holder.openEndDatePickerBtn.setText(currentTrip.getEndDate());
-        holder.tDescriptionET.setText(currentTrip.getDescription());
+        holder.tourNameTV.setText(trip.getTourName());
 
+        holder.detailsBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ViewTourActivity.class);
+                intent.putExtra("tourName",trip.getTourName());
+                intent.putExtra("tourPlace",trip.getTourPlace());
+                intent.putExtra("startDate",trip.getStartDate());
+                intent.putExtra("endDate",trip.getEndDate());
+                intent.putExtra("description",trip.getDescription());
+
+
+
+                context.startActivity(intent);
+            }
+        });
 
 
     }
@@ -55,17 +74,16 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private EditText tNameET, tPlaceET,tDescriptionET;
-        private Button saveTripBtn, openStartDatePickerBtn, openEndDatePickerBtn;
+
+        private TextView tourNameTV;
+        private Button detailsBTN;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            tourNameTV = itemView.findViewById(R.id.tourNameTV);
+            detailsBTN = itemView.findViewById(R.id.detailsBTN);
 
-            tNameET =itemView.findViewById(R.id.tNameET);
-            tPlaceET = itemView.findViewById(R.id.tPlaceET);
-            openEndDatePickerBtn = itemView.findViewById(R.id.openEndTimePickerBtn);
-            openStartDatePickerBtn = itemView.findViewById(R.id.openStartDatePickerBtn);
-            tDescriptionET = itemView.findViewById(R.id.tDescriptionET);
-            saveTripBtn = itemView.findViewById(R.id.saveTripBtn);
+
 
 
 

@@ -30,6 +30,8 @@ public class SignInActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseFirestore firestore;
 
+    private String userId;
+
 
 
     @Override

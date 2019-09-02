@@ -1,14 +1,16 @@
-package com.example.smartrav;
+package com.example.smartrav.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ViewTourActivity extends AppCompatActivity {
+import com.example.smartrav.R;
+
+public class MomentsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_tour);
+        setContentView(R.layout.activity_moments);
     }
 }

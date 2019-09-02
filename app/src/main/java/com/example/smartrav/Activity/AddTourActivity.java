@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ import java.util.List;
 
 public class AddTourActivity extends AppCompatActivity {
 
-    private List<Trip> tripList;
+    private ArrayList<Trip> tripList;
     private TripAdapter tripAdapter;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -67,15 +68,36 @@ public class AddTourActivity extends AppCompatActivity {
         saveTripBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tName = tNameET.getText().toString();
-                String tPlace = tPlaceET.getText().toString();
-                String tDescription = tDescriptionET.getText().toString();
+                String name = tNameET.getText().toString();
+                String place = tPlaceET.getText().toString();
                 String startDate = openStartDatePickerBtn.getText().toString();
                 String endDate = openEndDatePickerBtn.getText().toString();
+                String description = tDescriptionET.getText().toString();
 
-                addTrip(tName,tPlace,tDescription,startDate,endDate);
+                addTrip(name,place,startDate,endDate,description);
             }
         });
+    }
+
+    private void addTrip(String name, String place, String startDate, String endDate, String description) {
+
+        DatabaseReference tourRef = databaseReference.child("users").child(userId).child("tours");
+
+        String tourId = tourRef.push().getKey();
+        Trip trip = new Trip(name,place,startDate,endDate,description,tourId);
+
+
+        tourRef.child(tourId).setValue(trip).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(AddTourActivity.this, "Added", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(AddTourActivity.this,MainActivity.class));
+                }
+            }
+        });
+
+
     }
 
     private void openEndDatePicker() {
@@ -147,29 +169,7 @@ public class AddTourActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    private void addTrip(String tName, String tPlace, String tDescription, String startDate, String endDate) {
-        DatabaseReference tripRef = databaseReference.child("users").child(userId).child("trip");
 
-        String tripTd = tripRef.push().getKey();
-        Trip trip = new Trip(tName,tPlace,tDescription,startDate,endDate);
-
-
-        tripRef.child(tripTd).setValue(trip).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    Toast.makeText(AddTourActivity.this, "Added", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(AddTourActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-    }
 
     private void init() {
 
@@ -178,8 +178,8 @@ public class AddTourActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference();
         tNameET = findViewById(R.id.tNameET);
         tPlaceET = findViewById(R.id.tPlaceET);
-        openEndDatePickerBtn = findViewById(R.id.openEndTimePickerBtn);
         openStartDatePickerBtn = findViewById(R.id.openStartDatePickerBtn);
+        openEndDatePickerBtn = findViewById(R.id.openEndDatePickerBtn);
         tDescriptionET = findViewById(R.id.tDescriptionET);
         saveTripBtn = findViewById(R.id.saveTripBtn);
         

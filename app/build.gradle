@@ -48,5 +48,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:18.0.1'
     implementation 'com.google.firebase:firebase-messaging:19.0.1'
 
+    //recycler view
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //circle image view
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
 }
 apply plugin: 'com.google.gms.google-services'
